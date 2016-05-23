@@ -1,0 +1,65 @@
+@charset "UTF-8";
+/////////fontSizeベース14px////////
+
+$font8:0.5714rem;
+$font9:0.6429rem;
+$font10:0.7143rem;
+$font11:0.7857rem;
+$font12:0.8571rem;
+$font13:0.9286rem;
+$font14:1rem;
+$font15:1.071rem;
+$font16:1.143rem;
+$font17:1.214rem;
+$font18:1.286rem;
+$font19:1.357rem;
+$font20:1.429rem;
+
+$font21:1.5rem;
+$font22:1.571rem;
+
+$font24:1.714rem;
+$font25:1.786rem;
+$font26:1.857rem;
+$font28:2rem;
+$font30:2.143rem;
+$font32:2.286rem;
+$font33:2.357rem;
+$font34:2.429rem;
+$font35:2.5rem;
+$font36:2.571rem;
+$font38:2.714rem;
+$font48:3.429rem;
+
+
+/////////////box-sizing/////////////
+@mixin box-sizing($type:border-box)
+ {
+ -webkit-box-sizing:$type;
+ -moz-box-sizing:$type;
+ box-sizing:$type;
+ }
+
+ /////////////border-radius/////////////
+ @mixin border-radius($type)
+ {
+ -webkit-border-radius:$type $type $type $type;
+ -moz-border-radius:$type $type $type $type;
+ border-radius:$type $type $type $type;
+ }
+
+ /////////////opacity/////////////
+
+  @mixin opacity($type:0.6)
+  {
+  	filter:alpha(opacity=$type*100);
+  	-moz-opacity: $type;
+  	opacity: $type;
+  }
+/////////////レスポンシブ/////////////
+
+@mixin res($size){
+	@media only screen and (max-width: $size + "px") {
+		@content;
+	}
+}
