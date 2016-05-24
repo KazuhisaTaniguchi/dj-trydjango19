@@ -3,8 +3,10 @@ from django.db import models
 from django.core.urlresolvers import reverse
 from django.db.models.signals import pre_save
 from django.utils.text import slugify
+from django.utils.safestring import mark_safe
 
 from django.utils import timezone
+from markdown_deux import markdown
 
 
 class PostManager(models.Manager):
@@ -42,6 +44,10 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['-timestamp', '-updated']
+
+    def get_markdown(self):
+        content = self.content
+        return mark_safe(markdown(content))
 
 
 def create_slug(instance, new_slug=None):

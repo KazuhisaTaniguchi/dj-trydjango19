@@ -7,7 +7,7 @@ from pagedown.widgets import PagedownWidget
 
 class PostModelForm(forms.ModelForm):
     publish = forms.DateField(widget=forms.SelectDateWidget)
-    content = forms.CharField(widget=PagedownWidget())
+    content = forms.CharField(widget=PagedownWidget(show_preview=False))
 
     class Meta:
         model = Post

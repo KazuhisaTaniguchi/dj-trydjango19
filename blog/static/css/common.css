@@ -2,3 +2,9 @@
 body {
   color: #000;
 }
+
+/* line 7, ../compass/sass/common.scss */
+.wmd-panel {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
